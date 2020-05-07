@@ -1,0 +1,52 @@
+﻿@model Filmes.Models.Filme
+
+@{
+    ViewData["Title"] = "Avaliar";
+}
+
+<h2>Avaliar</h2>
+
+<h4>Filme</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Avaliar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-row">
+                <div class="form-group"></div>
+                <input type="hidden" asp-for="Id" />
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" disabled />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+                <input type="hidden" asp-for="Data_lancamento" class="form-control" />
+                <input type="hidden" asp-for="Genero" class="form-control" />
+                <input type="hidden" asp-for="Avaliacao" class="form-control" />
+                <input type="hidden" asp-for="Autor" class="form-control" />
+                <input type="hidden" asp-for="Classificacao" class="form-control" />
+
+                <input type="hidden" asp-for="Num_votos" class="form-control" />
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Descrição" class="control-label"></label>
+                    <input asp-for="Descrição" class="form-control" disabled />
+                    <span asp-validation-for="Descrição" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nota" class="control-label"></label>
+                <input asp-for="Nota" class="form-control" />
+                <span asp-validation-for="Nota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

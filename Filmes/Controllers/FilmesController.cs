@@ -25,56 +25,56 @@ namespace Filmes.Controllers
         {
             return View(await _context.Filmes.ToListAsync());
         }
-        //public async Task<IActionResult> Avaliar(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        public async Task<IActionResult> Avaliar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var filmes = await _context.Filmes.FindAsync(id);
-        //    if (filmes == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(filmes);
+            var filmes = await _context.Filmes.FindAsync(id);
+            if (filmes == null)
+            {
+                return NotFound();
+            }
+            return View(filmes);
 
-        //}
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Avaliar(int id, [Bind("Id,Titulo,Data_lancamento,Genero,Avaliacao,Autor,Classificacao,Descrição,Num_votos,Nota")] Filme filmes)
-        //{
-        //    if (id != filmes.Id)
-        //    {
-        //        return NotFound();
-        //    }
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            var filme = _context.Filmes.Find(filmes.Id);
-        //            filme.Num_votos++;
-        //            filme.Avaliacao = (filme.Avaliacao + filmes.Nota) / filme.Num_votos;
-        //            _context.Update(filme);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!FilmesExists(filmes.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(filmes);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Avaliar(int id, [Bind("Id,Titulo,Data_lancamento,Genero,Avaliacao,Autor,Classificacao,Descrição,Num_votos,Nota")] Filme filmes)
+        {
+            if (id != filmes.Id)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var filme = _context.Filmes.Find(filmes.Id);
+                    filme.Num_votos++;
+                    filme.Avaliacao = (filme.Avaliacao + filmes.Nota) / filme.Num_votos;
+                    _context.Update(filme);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!FilmesExists(filmes.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(filmes);
 
 
-        //}
+        }
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -106,9 +106,8 @@ namespace Filmes.Controllers
         {
             if (ModelState.IsValid)
             {
-                filmes.Avaliacao = 0;
+                filmes.Avaliacao = 5;
                 filmes.Num_votos = 1;
-                filmes.Avaliacao = (filmes.Avaliacao + filmes.Nota) / filmes.Num_votos;
                 _context.Add(filmes);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

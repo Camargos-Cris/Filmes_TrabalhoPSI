@@ -1,17 +1,18 @@
-﻿@model Filmes.Models.Filme
+﻿@model Filmes.Models.Series
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Avaliar";
 }
 
-<h1>Create</h1>
+<h2>Avaliar</h2>
 
-<h4>Filme</h4>
+<h4>Series</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Avaliar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
@@ -23,37 +24,47 @@
                 <span asp-validation-for="Data_lancamento" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Quantidade_temp" class="control-label"></label>
+                <input asp-for="Quantidade_temp" class="form-control" />
+                <span asp-validation-for="Quantidade_temp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Genero" class="control-label"></label>
                 <input asp-for="Genero" class="form-control" />
                 <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="hidden" asp-for="Avaliacao" value="0" class="form-control" />
+                <label asp-for="Avaliacao" class="control-label"></label>
+                <input asp-for="Avaliacao" class="form-control" />
+                <span asp-validation-for="Avaliacao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Autor" class="control-label"></label>
                 <input asp-for="Autor" class="form-control" />
                 <span asp-validation-for="Autor" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="Classificacao" class="control-label"></label>
-                <input  asp-for="Classificacao" class="form-control"  />
+                <input asp-for="Classificacao" class="form-control" />
                 <span asp-validation-for="Classificacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Descrição" class="control-label"></label>
-                <input asp-for="Descrição" class="form-control" />
-                <span asp-validation-for="Descrição" class="text-danger"></span>
-            </div>
-            <div class="form-group" >
-                <input type="hidden" asp-for="Num_votos" value="0"  class="form-control" />
-               
-            </div>
-            <div class="form-group" >
-                <input type="hidden" asp-for="Nota" value="0" class="form-control" />
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Num_votos" class="control-label"></label>
+                <input asp-for="Num_votos" class="form-control" />
+                <span asp-validation-for="Num_votos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nota" class="control-label"></label>
+                <input asp-for="Nota" class="form-control" />
+                <span asp-validation-for="Nota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
     </div>
@@ -63,6 +74,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

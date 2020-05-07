@@ -22,7 +22,7 @@ namespace Filmes.Models
         public string Classificacao { get; set; }
         public string Descrição { get; set; }
         public decimal Num_votos { get; set; }
-        [Range(1.00, 5.00)]
+        [Range(0, 5.00)]
         public decimal Nota { get; set; }
     }
 }
