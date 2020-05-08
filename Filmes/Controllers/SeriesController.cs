@@ -24,6 +24,10 @@ namespace Filmes.Controllers
         {
             return View(await _context.Series.ToListAsync());
         }
+        public async Task<IActionResult> TopSerie()
+        {
+            return View(await _context.Series.OrderByDescending(p => p.Avaliacao).ToListAsync());
+        }
         public async Task<IActionResult> Avaliar(int? id)
         {
             if (id == null)
