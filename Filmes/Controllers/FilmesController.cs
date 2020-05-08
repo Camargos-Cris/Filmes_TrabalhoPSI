@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Filmes.Data;
 using Filmes.Models;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Filmes.Controllers
 {
@@ -23,7 +24,12 @@ namespace Filmes.Controllers
         // GET: Filmes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Filmes.ToListAsync());
+            var filmes = await _context.Filmes.ToListAsync();
+            return View(filmes);
+        }
+        public async Task<IActionResult> TopFilme()
+        {
+            return View(await _context.Filmes.OrderByDescending(p=>p.Avaliacao).ToListAsync());
         }
         public async Task<IActionResult> Avaliar(int? id)
         {

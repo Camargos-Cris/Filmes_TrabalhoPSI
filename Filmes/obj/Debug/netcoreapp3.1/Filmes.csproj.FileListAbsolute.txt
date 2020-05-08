@@ -455,3 +455,5 @@ C:\Users\cris_\source\repos\Filmes\Filmes\obj\Debug\netcoreapp3.1\Razor\Views\Sh
 C:\Users\cris_\source\repos\Filmes\Filmes\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Script.cshtml.g.cs
 C:\Users\cris_\source\repos\Filmes\Filmes\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\cris_\source\repos\Filmes\Filmes\obj\Debug\netcoreapp3.1\Razor\Views\Filmes\Avaliar.cshtml.g.cs
+C:\Users\cris_\source\repos\Filmes\Filmes\obj\Debug\netcoreapp3.1\Razor\Views\Series\Avaliar.cshtml.g.cs
+C:\Users\cris_\source\repos\Filmes\Filmes\obj\Debug\netcoreapp3.1\Razor\Views\Filmes\TopFilme.cshtml.g.cs

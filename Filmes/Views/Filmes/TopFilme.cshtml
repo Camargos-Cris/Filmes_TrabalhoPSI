@@ -1,16 +1,11 @@
 ﻿@model IEnumerable<Filmes.Models.Filme>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "TopFilme";
 }
 
-<h1>Filmes</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-    <a asp-action="TopFilme">Top filmes</a>
-</p>
-<table class="table">
+<h2>Top Filmes</h2>
+<table class="table" id="table1" >
     <thead>
         <tr>
             <th>
@@ -34,8 +29,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Descrição)
             </th>
-
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -61,12 +54,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Descrição)
-            </td>
-            <td>
-                <a asp-action="Avaliar" asp-route-id="@item.Id">Avaliar</a> |
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
