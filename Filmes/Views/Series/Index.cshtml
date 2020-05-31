@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Filmes.Models.Series>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +10,10 @@
 <h1>Series</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (User.Identity.Name == "cristiano.camargos@gmail.com")
+    {
+        <a asp-action="Create">Create New</a>
+    }
     <a asp-action="TopSerie">Top Serie</a>
 </p>
 <table class="table" id="table1">
@@ -70,9 +76,12 @@
                 </td>
                 <td>
                     <a asp-action="Avaliar" asp-route-id="@item.Id">Avaliar</a>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.Identity.Name == "cristiano.camargos@gmail.com")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit|</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
                 </td>
             </tr>
         }

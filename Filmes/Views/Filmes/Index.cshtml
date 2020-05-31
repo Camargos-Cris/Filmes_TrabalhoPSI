@@ -7,7 +7,11 @@
 <h1>Filmes</h1>
 
 <p>
-    <button><a asp-action="Create">Create New</a></button> 
+    @if (User.Identity.Name == "cristiano.camargos@gmail.com")
+    {
+        <button><a asp-action="Create">Create New</a></button>
+    }
+
     <a asp-action="TopFilme">Top filmes</a>
 </p>
 <table class="table " id="table1">
@@ -65,9 +69,12 @@
                 </td>
                 <td>
                     <a asp-action="Avaliar" asp-route-id="@item.Id">Avaliar</a> |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.Identity.Name == "cristiano.camargos@gmail.com")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit|</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
                 </td>
             </tr>
         }

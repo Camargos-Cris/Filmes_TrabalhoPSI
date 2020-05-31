@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Filmes.Models;
+using Microsoft.AspNetCore.Identity.UI.V3.Pages.Account.Internal;
 
 namespace Filmes.Controllers
 {
