@@ -906,16 +906,13 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   left: 0;
   top: 0;
   z-index: 10;
-  background-color: #ffffff;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+
 }
 .page-navbar.header-fixed {
   position: fixed;
 }
 .page-navbar .navbar-brand {
   width: 210px;
-  color: #4d4d4d;
-  background-color: #303946;
   text-transform: uppercase;
   font-weight: bold;
   padding: 1px 15px;
@@ -942,7 +939,7 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   margin-top: 8px;
   margin-right: 15px;
   margin-bottom: 8px;
-  background-color: transparent;
+
   background-image: none;
   border: 1px solid #333333;
   border-radius: 4px;
@@ -952,7 +949,7 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   width: 22px;
   height: 2px;
   border-radius: 1px;
-  background-color: #333333;
+
 }
 .page-navbar .navbar-no-collapse {
   width: auto;
@@ -963,7 +960,6 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   border-radius: 0;
 }
 .page-navbar .navbar-nav > li > a {
-  color: #333333;
   padding: 15px 20px;
   height: 50px;
   transition: background;
@@ -977,7 +973,6 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   margin-top: -5px;
 }
 .page-navbar .navbar-nav > li > a:hover {
-  background-color: #f7f9fe;
 }
 .page-navbar .navbar-nav > li > a .badge {
   padding: 3px 5px 2px;
@@ -986,7 +981,7 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   right: 12px;
 }
 .page-navbar .navbar-nav > li.open > a {
-  background-color: #f7f9fe;
+
 }
 .page-navbar .navbar-nav > li .dropdown-menu {
   margin-top: 12px;
@@ -998,14 +993,12 @@ body.fixed-right-sidebar:not(.fixed-header) #right-sidebar.rstop {
   padding: 10px 20px;
 }
 .page-navbar .navbar-nav > li .dropdown-menu > li a.dropdown-menu-header {
-  background: #f7f9fe;
   font-weight: bold;
   border-bottom: 1px solid #e3e3e3;
 }
 .page-navbar .navbar-nav > li .dropdown-menu > li a.view-all {
   text-align: center;
   border-top: 1px solid #e3e3e3;
-  background: #f7f9fe;
 }
 .page-navbar .navbar-nav > li .dropdown-menu > li:last-child {
   border-bottom: none;
