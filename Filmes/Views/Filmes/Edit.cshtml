@@ -4,13 +4,14 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
 
-<h4>Filme</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+
+
+<div class="row ml5">
+
+    <div class="col-md-4 text-white">
+        <h1>Editar Filme</h1><hr />
+        <form asp-action="Edit" class="bck rounded">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -29,9 +30,7 @@
                 <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Avaliacao" class="control-label"></label>
-                <input asp-for="Avaliacao" class="form-control" />
-                <span asp-validation-for="Avaliacao" class="text-danger"></span>
+                <input hidden asp-for="Avaliacao" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Autor" class="control-label"></label>
@@ -49,24 +48,17 @@
                 <span asp-validation-for="Descrição" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Num_votos" class="control-label"></label>
-                <input asp-for="Num_votos" class="form-control" />
-                <span asp-validation-for="Num_votos" class="text-danger"></span>
+                <input hidden asp-for="Num_votos" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Nota" class="control-label"></label>
-                <input asp-for="Nota" class="form-control" />
-                <span asp-validation-for="Nota" class="text-danger"></span>
+                <input hidden asp-for="Nota" class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
+        <a asp-action="Index">Back to List</a>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

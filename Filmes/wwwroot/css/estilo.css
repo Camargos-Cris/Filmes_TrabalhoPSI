@@ -3,12 +3,15 @@
 }
 .fundobody{
     background-image:url(../img/fundo3.jpg);
-    background-size:100%
+    background-size:auto
     
 }
 .fundoav{
     background-image:url(../img/fundoav.jpeg);
-    background-size:100%
+    background-size:auto
+}
+.bck {
+    background-color:rgb(128, 128, 128,0.5);
 }
 .opct {
     height: 100px;
