@@ -3,14 +3,13 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Create</h1>
-
-<h4>Filme</h4>
+    <div class="text-white">
+        <h4>Novo Filme</h4>
+    </div>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="row ml-5">
+    <div class="col-md-4 text-white">
+        <form asp-action="Create" class=" border rounded" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>

@@ -4,28 +4,28 @@
     @await Html.PartialAsync("_Cabecalho")
     @await Html.PartialAsync("_Script")
 </head>
-<body>
+<body class="fundobody text-white">
     <div>
         <header>
 
 
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom  mb-3">
                 <div class="container ">
-                    @await Html.PartialAsync("_LoginPartial")
+                    @await Html.PartialAsync("Headerbar")
                 </div>
             </nav>
 
         </header>
-        <div class="container fundobody">
+        <div >
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
         </div>
 
-        <footer class="border-top footer text-muted">
-            <div class="container">
+        <footer class="border-top footer">
+ 
                 &copy; 2020 - Filmeries - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
+     
         </footer>
         @RenderSection("Scripts", required: false)
     </div>

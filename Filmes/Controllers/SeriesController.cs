@@ -55,10 +55,10 @@ namespace Filmes.Controllers
             {
                 try
                 {
-                    var filme = _context.Filmes.Find(series.Id);
-                    filme.Num_votos++;
-                    filme.Avaliacao = (filme.Avaliacao + series.Nota) / filme.Num_votos;
-                    _context.Update(filme);
+                    var serie = _context.Series.Find(series.Id);
+                    serie.Num_votos++;
+                    serie.Avaliacao = (serie.Avaliacao + series.Nota) / serie.Num_votos;
+                    _context.Update(serie);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
