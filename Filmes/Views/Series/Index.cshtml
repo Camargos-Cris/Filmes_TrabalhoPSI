@@ -7,15 +7,24 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Series</h1>
+<h1 class="text-white">Series</h1>
 
-<p>
-    @if (User.Identity.Name == "cristiano.camargos@gmail.com")
-    {
-        <a asp-action="Create">Create New</a>
-    }
-    <a asp-action="TopSerie">Top Serie</a>
-</p>
+<table class="ml0">
+    <tr>
+        <td class="col-sm-6">
+            @if (User.Identity.Name == "cristiano.camargos@gmail.com")
+            {
+
+
+                <a class="nav-link text-white border rounded" asp-action="Create"><span>Inserir Serie</span></a>
+
+            }
+        </td>
+        <td class="col-sm-6">
+            <a class="nav-link text-white border rounded" asp-action="TopSerie"><span>Top Series</span></a>
+        </td>
+    </tr>
+</table>
 <table class="table table-striped table-condensed table-bordered" id="table1">
     <thead>
         <tr>

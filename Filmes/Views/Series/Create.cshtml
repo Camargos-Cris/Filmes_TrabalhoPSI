@@ -4,13 +4,14 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Series</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" class="text-white">
+<div class="row ml-5">
+    <div class="col-md-4 text-white">
+        <form asp-action="Create" class=" bck rounded">
+            <div class="text-white">
+                <h4>Nova Serie</h4>
+            </div>
+            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
@@ -33,9 +34,9 @@
                 <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
             <div class="form-group">
-  
-                <input  hidden asp-for="Avaliacao" value="0" class="form-control" />
-             
+
+                <input hidden asp-for="Avaliacao" value="0" class="form-control" />
+
             </div>
             <div class="form-group">
                 <label asp-for="Autor" class="control-label"></label>
@@ -53,14 +54,14 @@
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                
+
                 <input hidden asp-for="Num_votos" value="0" class="form-control" />
-                
+
             </div>
             <div class="form-group">
-               
-                <input hidden asp-for="Nota"value="0" class="form-control" />
-               
+
+                <input hidden asp-for="Nota" value="0" class="form-control" />
+
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

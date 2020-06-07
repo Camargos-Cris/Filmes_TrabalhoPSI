@@ -3,13 +3,14 @@
 @{
     ViewData["Title"] = "Create";
 }
-    <div class="text-white">
-        <h4>Novo Filme</h4>
-    </div>
-<hr />
+
 <div class="row ml-5">
     <div class="col-md-4 text-white">
-        <form asp-action="Create" class=" bck rounded" >
+        <form asp-action="Create" class=" bck rounded">
+            <div class="text-white">
+                <h4>Novo Filme</h4>
+            </div>
+            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
@@ -34,9 +35,9 @@
                 <input asp-for="Autor" class="form-control" />
                 <span asp-validation-for="Autor" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="Classificacao" class="control-label"></label>
-                <input  asp-for="Classificacao" class="form-control"  />
+                <input asp-for="Classificacao" class="form-control" />
                 <span asp-validation-for="Classificacao" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,11 +45,11 @@
                 <input asp-for="Descrição" class="form-control" />
                 <span asp-validation-for="Descrição" class="text-danger"></span>
             </div>
-            <div class="form-group" >
-                <input type="hidden" asp-for="Num_votos" value="0"  class="form-control" />
-               
+            <div class="form-group">
+                <input type="hidden" asp-for="Num_votos" value="0" class="form-control" />
+
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <input type="hidden" asp-for="Nota" value="0" class="form-control" />
             </div>
             <div class="form-group">
