@@ -58,9 +58,12 @@ namespace Filmes.Controllers
             {
                 try
                 {
+                    decimal aux;
                     var filme = _context.Filmes.Find(filmes.Id);
+                    aux = filme.Num_votos * filme.Avaliacao;
                     filme.Num_votos++;
-                    filme.Avaliacao = (filme.Avaliacao + filmes.Nota) / filme.Num_votos;
+
+                    filme.Avaliacao = (aux + filmes.Nota) / filme.Num_votos;
                     _context.Update(filme);
                     await _context.SaveChangesAsync();
                 }
